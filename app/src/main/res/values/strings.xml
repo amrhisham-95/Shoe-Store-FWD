@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MyShoeStoreApp1stProject</string>
+    <string name="emailTextView">EMAIL</string>
+    <string name="passwordTextView">PASSWORD</string>
+    <string name="emailEditText">Enter Your Email</string>
+    <string name="passwordEditText">Enter Your Password</string>
+    <string name="creatingANewLoginButton">CREATE A LOGIN</string>
+    <string name="loginButton">LOGIN</string>
+    <string name="welcomeTitleTextView">WELCOME</string>
+    <string name="welcomeMessageTextView">CONGRATULATION , Welcome To The Shoe Store Application , We Wish You A Great Shopping On Our App</string>
+    <string name="welcomeButton">Go To Instructions</string>
+    <string name="instructionsTitleTextView">INSTRUCTIONS</string>
+    <string name="instructionsMessageTextView">Hello, Now You Can Press The Button Bellow And Go For Shopping, First,Look At Our Products, then Choose What Suits You And Enjoy</string>
+    <string name="instructionsButton">Go For Shopping, Enjoy</string>
+    <string name="contentDescription">Go</string>
+    <string name="shoeNameTextView">SHOE NAME</string>
+    <string name="companyTextView">COMPANY</string>
+    <string name="shoeSizeTextView">SHOE SIZE</string>
+    <string name="shoeDescriptionTextView">DESCRIPTION</string>
+    <string name="cancelButton">CANCEL</string>
+    <string name="saveButton">SAVE</string>
+    <string name="contentDescriptionHint">Enter A Description</string>
+    <string name="shoeNameHint">Enter Name Of The Shoe</string>
+    <string name="companyHint">Enter Your Company</string>
+    <string name="shoeSizeHint">Enter The Size You Need</string>
+    <string name="logout">LOGOUT</string>
+
+</resources>

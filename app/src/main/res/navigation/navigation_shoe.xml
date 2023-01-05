@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_shoe"
+    app:startDestination="@id/loginScreen">
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.example.myshoestoreapp1stproject.LoginScreen"
+        android:label="Login"
+        tools:layout="@layout/fragment_login_screen">
+        <action
+            android:id="@+id/action_loginScreen_to_welcomeScreen"
+            app:destination="@id/welcomeScreen"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.example.myshoestoreapp1stproject.WelcomeScreen"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome_screen">
+        <action
+            android:id="@+id/action_welcomeScreen_to_instructionScreen"
+            app:destination="@id/instructionScreen"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionScreen"
+        android:name="com.example.myshoestoreapp1stproject.InstructionScreen"
+        android:label="Instructions"
+        tools:layout="@layout/fragment_instruction_screen">
+        <action
+            android:id="@+id/action_instructionScreen_to_listShoeScreen"
+            app:destination="@id/listShoeScreen"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listShoeScreen"
+        android:name="com.example.myshoestoreapp1stproject.ListShoeScreen"
+        android:label="Lists Of The Shoes"
+        tools:layout="@layout/fragment_list_shoe_screen">
+        <action
+            android:id="@+id/action_listShoeScreen_to_detailShoeScreen"
+            app:destination="@id/detailShoeScreen"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_listShoeScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailShoeScreen"
+        android:name="com.example.myshoestoreapp1stproject.DetailShoeScreen"
+        android:label="Detail Of The Shoes"
+        tools:layout="@layout/fragment_detail_shoe_screen">
+        <action
+            android:id="@+id/action_detailShoeScreen_to_listShoeScreen"
+            app:destination="@id/listShoeScreen"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>

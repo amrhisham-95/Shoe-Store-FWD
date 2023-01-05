@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- To Convert the layoutFile(xml) to permit the dataBinding features we need to put <layout></layout> and put all views inside the constraint layout inside it-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- To provide data variable (type of the data class) and use it to provide data binding with the views in the xml file  -->
+    <data>
+        <import type="com.example.myshoestoreapp1stproject.model.ConverterIntToString"/>
+        <variable
+            name="dataShoe"
+            type="com.example.myshoestoreapp1stproject.model.DataOfTheDetailsOfShoes" />
+    </data>
+
+    <!--In the detailScreen (xml) I put the constraint layout that a parent layout which contains all textFields & editTextViews & Buttons-->
+    <!-- constraintLayout more flexibility (put the views in any positions) and rather than linear Layout that only put the views vertical or horizontal put -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <TextView
+            android:id="@+id/showNameTextView"
+            android:text="@string/shoeNameTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/shoeNameEditText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline22"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="@+id/guideline18"
+            app:layout_constraintVertical_bias="0.0"
+            style="@style/textViewsStyleDetailScreen" />
+
+        <TextView
+            android:id="@+id/companyTextView"
+            android:layout_marginTop="32dp"
+            android:text="@string/companyTextView"
+            style="@style/textViewsStyleDetailScreen"
+            app:layout_constraintEnd_toEndOf="@+id/showNameTextView"
+            app:layout_constraintStart_toStartOf="@+id/showNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/showNameTextView" />
+
+        <TextView
+            android:id="@+id/sizeShoeTextView"
+            android:layout_marginTop="32dp"
+            android:text="@string/shoeSizeTextView"
+            style="@style/textViewsStyleDetailScreen"
+            app:layout_constraintStart_toStartOf="@+id/companyTextView"
+            app:layout_constraintTop_toBottomOf="@+id/companyTextView" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_marginTop="24dp"
+            android:text="@string/shoeDescriptionTextView"
+            style="@style/textViewsStyleDetailScreen"
+            app:layout_constraintEnd_toEndOf="@+id/sizeShoeTextView"
+            app:layout_constraintStart_toStartOf="@+id/sizeShoeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/sizeShoeTextView" />
+
+        <EditText
+            android:id="@+id/shoeNameEditText"
+            style="@style/editTextViewsStyleDetailScreen"
+            android:autofillHints="name"
+            android:hint="@string/shoeNameHint"
+            android:inputType="textPersonName"
+            android:text="@={dataShoe.name}"
+            app:layout_constraintEnd_toStartOf="@+id/guideline21"
+            app:layout_constraintStart_toStartOf="@+id/guideline22"
+            app:layout_constraintTop_toTopOf="@+id/guideline18"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/companyEditText"
+            android:layout_marginTop="12dp"
+            android:autofillHints="company"
+            android:hint="@string/companyHint"
+            android:inputType="textPersonName"
+            android:text="@={dataShoe.company}"
+            style="@style/editTextViewsStyleDetailScreen"
+            app:layout_constraintEnd_toStartOf="@+id/guideline21"
+            app:layout_constraintStart_toStartOf="@+id/guideline22"
+            app:layout_constraintTop_toBottomOf="@+id/shoeNameEditText"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/SizeShoeEditText"
+            android:layout_marginTop="12dp"
+            android:autofillHints="sizeShoe"
+            android:hint="@string/shoeSizeHint"
+            android:inputType="number"
+            android:text="@={ConverterIntToString.intToString(dataShoe.shoeSize)}"
+            style="@style/editTextViewsStyleDetailScreen"
+            app:layout_constraintBottom_toBottomOf="@+id/sizeShoeTextView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline21"
+            app:layout_constraintStart_toStartOf="@+id/guideline22"
+            app:layout_constraintTop_toBottomOf="@+id/companyEditText"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/descriptionEditText"
+            android:layout_marginTop="8dp"
+            android:autofillHints="description"
+            android:hint="@string/contentDescriptionHint"
+            android:inputType="textPersonName"
+            android:text="@={dataShoe.descriptions}"
+            style="@style/editTextViewsStyleDetailScreen"
+            app:layout_constraintBottom_toBottomOf="@+id/descriptionTextView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline21"
+            app:layout_constraintStart_toStartOf="@+id/guideline22"
+            app:layout_constraintTop_toBottomOf="@+id/SizeShoeEditText"
+            tools:ignore="LabelFor" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/buttonsStyleDetailScreen"
+            android:layout_marginTop="156dp"
+            android:text="@string/cancelButton"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/guideline20"
+            app:layout_constraintEnd_toStartOf="@+id/saveButton"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/buttonsStyleDetailScreen"
+            android:text="@string/saveButton"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline21"
+            app:layout_constraintStart_toStartOf="@+id/guideline22"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEditText"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+

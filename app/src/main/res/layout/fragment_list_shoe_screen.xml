@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- To Convert the layoutFile(xml) to permit the dataBinding features we need to put <layout></layout> and put all views inside the constraint layout inside it-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <!--In the ListScreen (xml) I put the constraint layout that a parent layout which contains all textFields & editTextViews & Buttons-->
+    <!-- constraintLayout more flexibility (put the views in any positions) and rather than linear Layout that only put the views vertical or horizontal put -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="64dp"
+            android:layout_height="59dp"
+            android:layout_gravity="bottom|end"
+            android:clickable="true"
+            android:contentDescription="@string/contentDescription"
+            android:focusable="true"
+            android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="#FF5722"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.954"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeListScrollView"
+            app:layout_constraintVertical_bias="0.547"
+            app:maxImageSize="50sp" />
+
+        <!-- that contains linear Layout to permit scrolling on the views inside it -->
+        <ScrollView
+            android:id="@+id/shoeListScrollView"
+            android:layout_width="0dp"
+            android:layout_height="519dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Linear Layout contains TextView that added programmatically that contains the data that returns from the detailScreen-->
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/shoeListScrollView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
