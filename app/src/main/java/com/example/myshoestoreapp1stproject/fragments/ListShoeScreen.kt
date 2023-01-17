@@ -1,4 +1,4 @@
-package com.example.myshoestoreapp1stproject
+package com.example.myshoestoreapp1stproject.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -8,10 +8,10 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
+import com.example.myshoestoreapp1stproject.R
 import com.example.myshoestoreapp1stproject.databinding.FragmentListShoeScreenBinding
 import com.example.myshoestoreapp1stproject.viewModels.ViewModelShoeStore
 
@@ -29,7 +29,8 @@ class ListShoeScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment by using DataBinding
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_shoe_screen, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_list_shoe_screen, container, false)
 
 
         // Using findNavController() to navigate From listShoeScreen To detailShoeScreen When Press the floatingActionButton
@@ -60,7 +61,7 @@ class ListShoeScreen : Fragment() {
 
 
         //Observation on the liveDataRead in the viewModel,if changes happen at the detailScreen when the user put the data in the editTexts,return these data to the listScreen when user press on SaveButton
-        viewModelShoe.liveDataRead.observe(viewLifecycleOwner) {
+        viewModelShoe.mutableLiveDataWrite.observe(viewLifecycleOwner) {
 
             val listData: ArrayList<String> = ArrayList()
 

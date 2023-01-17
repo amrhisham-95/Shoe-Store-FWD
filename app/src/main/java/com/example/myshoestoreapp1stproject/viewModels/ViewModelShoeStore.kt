@@ -6,10 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.example.myshoestoreapp1stproject.model.DataOfTheDetailsOfShoes
 
 class ViewModelShoeStore : ViewModel() {
+
     //For Write the data from user by using MutableLiveData
-    private val mutableLiveDataWrite = MutableLiveData<List<DataOfTheDetailsOfShoes>>()
-    //For Read the data from LiveData
-    val liveDataRead : LiveData<List<DataOfTheDetailsOfShoes>> = mutableLiveDataWrite
+     val mutableLiveDataWrite = MutableLiveData<List<DataOfTheDetailsOfShoes>>()
 
     init {
         mutableLiveDataWrite.value = mutableListOf()

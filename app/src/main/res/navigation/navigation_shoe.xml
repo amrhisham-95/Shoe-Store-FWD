@@ -6,7 +6,7 @@
     app:startDestination="@id/loginScreen">
     <fragment
         android:id="@+id/loginScreen"
-        android:name="com.example.myshoestoreapp1stproject.LoginScreen"
+        android:name="com.example.myshoestoreapp1stproject.fragments.LoginScreen"
         android:label="Login"
         tools:layout="@layout/fragment_login_screen">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeScreen"
-        android:name="com.example.myshoestoreapp1stproject.WelcomeScreen"
+        android:name="com.example.myshoestoreapp1stproject.fragments.WelcomeScreen"
         android:label="Welcome"
         tools:layout="@layout/fragment_welcome_screen">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/instructionScreen"
-        android:name="com.example.myshoestoreapp1stproject.InstructionScreen"
+        android:name="com.example.myshoestoreapp1stproject.fragments.InstructionScreen"
         android:label="Instructions"
         tools:layout="@layout/fragment_instruction_screen">
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/listShoeScreen"
-        android:name="com.example.myshoestoreapp1stproject.ListShoeScreen"
+        android:name="com.example.myshoestoreapp1stproject.fragments.ListShoeScreen"
         android:label="Lists Of The Shoes"
         tools:layout="@layout/fragment_list_shoe_screen">
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailShoeScreen"
-        android:name="com.example.myshoestoreapp1stproject.DetailShoeScreen"
+        android:name="com.example.myshoestoreapp1stproject.fragments.DetailShoeScreen"
         android:label="Detail Of The Shoes"
         tools:layout="@layout/fragment_detail_shoe_screen">
         <action

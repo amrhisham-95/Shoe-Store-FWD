@@ -1,4 +1,4 @@
-package com.example.myshoestoreapp1stproject
+package com.example.myshoestoreapp1stproject.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,13 +8,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.myshoestoreapp1stproject.R
 import com.example.myshoestoreapp1stproject.databinding.FragmentDetailShoeScreenBinding
 import com.example.myshoestoreapp1stproject.model.DataOfTheDetailsOfShoes
 import com.example.myshoestoreapp1stproject.viewModels.ViewModelShoeStore
 
 class DetailShoeScreen : Fragment() {
+
     private lateinit var binding: FragmentDetailShoeScreenBinding
-    //explain viewModel Class
+    //explain viewModel Class using activityViewModels() for 2 way dataBinding (لو في ايديت تيكست) Or
+    //viewModels() for 1 way dataBinding (لو في تيكست فيو)
     private val viewModelShoe : ViewModelShoeStore by activityViewModels()
     //explain data class
     private var dataOfTheShoe = DataOfTheDetailsOfShoes()
@@ -26,7 +29,8 @@ class DetailShoeScreen : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment by using DataBinding
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_detail_shoe_screen,container,false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_detail_shoe_screen,container,false)
 
         // Using findNavController() to returns back From detailShoeScreen To listShoeScreen When Press the cancelButton
         binding.cancelButton.setOnClickListener {
